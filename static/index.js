@@ -2,26 +2,7 @@ $(document).ready(function () {
     getStory();
 })
 
-function getStory() {
-    $.ajax({
-        url: "/get-story",
-        type: "get",
-        success: function (result) {
-            displayStory(result.story)
-        },
-        error: function (result) {
-            alert(result.responseJSON.message)
-        }
-    })
-}
-
 $(function () {
-    $(".input_field").keyup(function () {
-        let id = $(this).attr("id");
-        let input_number = id.split("_")[1]
-        $(".rep_input").eq(input_number).html($(this).val());
-    })
-
     $("#submit_story").click(function () {
         let values = []
         for (let i = 0; i < $(".input_field").length; i++) {
@@ -48,7 +29,18 @@ $(function () {
     })
 })
 
-
+function getStory() {
+    $.ajax({
+        url: "/get-story",
+        type: "get",
+        success: function (result) {
+            displayStory(result.story)
+        },
+        error: function (result) {
+            alert(result.responseJSON.message)
+        }
+    })
+}
 
 function displayStory(story) {
     $("#story_title").html(story.title)
@@ -67,4 +59,10 @@ function displayStory(story) {
 
     $("#story_text").html(story.story)
     $("#story_id").val(story.story_id)
+
+    $(".input_field").keyup(function () {
+        let id = $(this).attr("id");
+        let input_number = id.split("_")[1]
+        $(".rep_input").eq(input_number).html($(this).val());
+    })
 }
