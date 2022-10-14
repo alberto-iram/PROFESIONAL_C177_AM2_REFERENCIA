@@ -53,7 +53,7 @@ function displayStory(story) {
 
     $("#input_fields").empty();
     for (let i = 0; i < story.inputs; i++) {
-        let input_html = `<input type="text" class="input_field" id="input_${i}" placeholder="Input ${i + 1}"/>`
+        let input_html = `<input type="text" class="input_field" id="input_${i}" placeholder="Entrada ${i + 1}"/>`
         $("#input_fields").append(input_html)
     }
 
