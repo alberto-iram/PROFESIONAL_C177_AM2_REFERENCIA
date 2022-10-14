@@ -1,4 +1,4 @@
-# PROFESIONAL_C177_PLANTILLA (MAESTRA)
+# PROFESIONAL_C177_REFERENCIA
 Crea un entorno virtual usando los siguientes comandos para ejecutar este proyecto:
 #### Windows:
 python3.8 -m venv venv
